@@ -26,7 +26,6 @@ public class VectorAdapter<TKey, TEntity> : IVectorEntity<TKey>
     [VectorStoreData]
     public string CombinedData => string.Join(" ", _textSelectors.Select(sel => sel(_entity)));
     
-   
     [VectorStoreVector(
         Dimensions: 4096,
         DistanceFunction = DistanceFunction.CosineSimilarity,
