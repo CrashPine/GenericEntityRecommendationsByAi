@@ -23,7 +23,7 @@ namespace AiGenericEmbedding;
                 .Select(m => new VectorAdapter<int, Movie>(m, mv => mv.Id, mv => mv.Title, mv => mv.Description))
                 .ToList();
 
-            var uri   = new Uri("http://192.168.130.86:44444");
+            var uri   = new Uri("http://localhost:1488");
             var model = "nomic-embed-text:v1.5";
 
             var itemRec = new AiRecommendations<int, VectorAdapter<int, Movie>>(adapters, uri, model);
